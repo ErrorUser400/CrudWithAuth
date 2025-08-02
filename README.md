@@ -22,5 +22,6 @@ To Do
 - [] finish up consuming JWT into each endpoint
 - [] Add refresh Token
 - [] Add Roles
+- [] Register endpoint
 
 I'll try to think of other tasks
