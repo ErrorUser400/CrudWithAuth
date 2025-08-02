@@ -1,7 +1,7 @@
 # CrudWithAuth
 try to do a crud .net web api with jwt auth
 
-![Image of API OpenApi](Assets/Screenshot 2025-08-02 161359.png)
+![Image of API OpenApi](<Assets/Screenshot 2025-08-02 161359.png>)
 
 It's a todo crud app so I'll need to do is:
 - [x] Create
