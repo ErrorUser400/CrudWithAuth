@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mlhyY1XEs1I=",
+  "dgSpecHash": "9aLXo/CWhH0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\CrudWithAuth.csproj",
+  "projectFilePath": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\CrudWithAuth.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bensa\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\bensa\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.7\\microsoft.aspnetcore.authentication.jwtbearer.9.0.7.nupkg.sha512",

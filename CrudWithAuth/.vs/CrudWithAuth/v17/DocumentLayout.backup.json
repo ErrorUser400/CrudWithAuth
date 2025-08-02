@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\",
+  "WorkspaceRootPath": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|c:\\users\\bensa\\documents\\personal_site\\crudwithauth\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|c:\\users\\bensa\\onedrive\\documents\\github\\crudwithauth\\crudwithauth\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|solutionrelative:controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|c:\\users\\bensa\\documents\\personal_site\\crudwithauth\\model\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|c:\\users\\bensa\\onedrive\\documents\\github\\crudwithauth\\crudwithauth\\model\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|solutionrelative:model\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|c:\\users\\bensa\\documents\\personal_site\\crudwithauth\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|c:\\users\\bensa\\onedrive\\documents\\github\\crudwithauth\\crudwithauth\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|solutionrelative:model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|c:\\users\\bensa\\documents\\personal_site\\crudwithauth\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|c:\\users\\bensa\\onedrive\\documents\\github\\crudwithauth\\crudwithauth\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A79641DA-55FB-4B15-AE5C-56803D7DD243}|CrudWithAuth.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -48,11 +48,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ToDoController.cs",
-              "DocumentMoniker": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\Controllers\\ToDoController.cs",
+              "DocumentMoniker": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\Controllers\\ToDoController.cs",
               "RelativeDocumentMoniker": "Controllers\\ToDoController.cs",
-              "ToolTip": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\Controllers\\ToDoController.cs",
+              "ToolTip": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\Controllers\\ToDoController.cs",
               "RelativeToolTip": "Controllers\\ToDoController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAxwBgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-02T20:11:22.124Z",
               "EditorCaption": ""
@@ -61,9 +61,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ToDo.cs",
-              "DocumentMoniker": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\Model\\ToDo.cs",
+              "DocumentMoniker": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\Model\\ToDo.cs",
               "RelativeDocumentMoniker": "Model\\ToDo.cs",
-              "ToolTip": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\Model\\ToDo.cs",
+              "ToolTip": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\Model\\ToDo.cs",
               "RelativeToolTip": "Model\\ToDo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -73,9 +73,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "UserModel.cs",
-              "DocumentMoniker": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\Model\\UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\Model\\UserModel.cs",
               "RelativeDocumentMoniker": "Model\\UserModel.cs",
-              "ToolTip": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\Model\\UserModel.cs",
+              "ToolTip": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\Model\\UserModel.cs",
               "RelativeToolTip": "Model\\UserModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -85,9 +85,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\Data\\AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

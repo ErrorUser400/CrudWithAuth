@@ -3531,11 +3531,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\CrudWithAuth.csproj",
+      "projectUniqueName": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\CrudWithAuth.csproj",
       "projectName": "CrudWithAuth",
-      "projectPath": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\CrudWithAuth.csproj",
+      "projectPath": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\CrudWithAuth.csproj",
       "packagesPath": "C:\\Users\\bensa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bensa\\Documents\\personal_site\\CrudWithAuth\\obj\\",
+      "outputPath": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
