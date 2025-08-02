@@ -1,0 +1,14 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CrudWithAuth.Model
+{
+    public class ToDoDTO
+    {
+        public int Id { get; set; } = 0;
+        [Required]
+        [MaxLength(20)]
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public bool isDone { get; set; } = false;
+    }
+}
