@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "fbleDFW3PW8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bensa\\OneDrive\\Documents\\GitHub\\CrudWithAuth\\CrudWithAuth.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bensa\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.8\\microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
+    "C:\\Users\\bensa\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\bensa\\.nuget\\packages\\scalar.aspnetcore\\2.6.9\\scalar.aspnetcore.2.6.9.nupkg.sha512"
+  ],
+  "logs": []
+}
