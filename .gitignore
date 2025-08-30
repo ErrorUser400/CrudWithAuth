@@ -1,2 +1,2 @@
-.\CrudWithAuth\Data\Migrations
-.\CrudWithAuth\Data\Sqlite.db
+/Data/Migrations
+/Data/Sqlite.db

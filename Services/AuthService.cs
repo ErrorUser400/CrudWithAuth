@@ -76,6 +76,7 @@ namespace CrudWithAuth.Services
             if (user is null) { return null; }
 
             return await CreateTokenResponse(user);
+        }
 
         private async Task<User?> ValidateRefreshTokenAsync(int Id, string refreshToken)
         {
