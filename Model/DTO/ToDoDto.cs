@@ -1,10 +1,18 @@
-﻿namespace CrudWithAuth.Model.DTO
+﻿using CrudWithAuth.Entitites;
+
+namespace CrudWithAuth.Model.DTO
 {
     public class ToDoDto
     {
+        public ToDoDto(ToDo toDo)
+        {
+            Id = toDo.Id;
+            Title = toDo.Title;
+            IsDone = toDo.IsDone;
+        }
+
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
-        public DateTime CreatedDate { get; set; }
         public bool IsDone { get; set; } = false;
     }
 }
