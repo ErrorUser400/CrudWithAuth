@@ -28,6 +28,7 @@ namespace CrudWithAuth.Services
         {
             var todo = await _context.toDos.FindAsync(Id);
 
+            //can't find todo
             if (todo is null)
             {
                 return null;
@@ -42,6 +43,8 @@ namespace CrudWithAuth.Services
         public async Task<ToDoDto?> GetToDoAsync(int Id)
         {
             var todo = await _context.toDos.FirstOrDefaultAsync(t => t.Id == Id);
+
+            //can't find todo
             if (todo is null)
             {
                 return null;
@@ -54,11 +57,13 @@ namespace CrudWithAuth.Services
         {
             var todo = await _context.toDos.ToListAsync();
 
+            //can't find or there is none in database
             if (todo is null || todo.Count == 0)
             {
                 return Enumerable.Empty<ToDoDto>().ToList();
             }
 
+            //create a List<ToDoDto> from List<Todo>. select each element and use array spread operator to create list
             return [.. todo.Select(t => new ToDoDto(t))];
         }
 
@@ -66,11 +71,13 @@ namespace CrudWithAuth.Services
         {
             var todo = await _context.toDos.FirstOrDefaultAsync(t => t.Id == UpdateToDo.Id);
 
+            //can't find todo
             if (todo is null)
             {
                 return null;
             }
 
+            //modify only the essentials
             todo.IsDone = UpdateToDo.IsDone;
             todo.Title = UpdateToDo.Title;
 

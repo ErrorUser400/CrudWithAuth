@@ -41,8 +41,7 @@ namespace CrudWithAuth.Controllers
         [HttpPost("/create")]
         public async Task<ActionResult<ToDoDto>> CreateToDo(ToDoDto request)
         {
-            //var userId = Int32.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
-
+            //get userid from the context (basically the token)
             var userId = Int32.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
             var result = await _toDoService.CreateToDo(request, userId);
