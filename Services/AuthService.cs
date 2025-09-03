@@ -23,6 +23,11 @@ namespace CrudWithAuth.Services
             _context = context;
         }
 
+        //<summary>
+        // log in the user and make sure password hash match with the database
+        // if anything goes wrong return null
+        // else return access token and refresh token
+        //</summary>
         public async Task<TokenResponseDto?> LoginAsync(UserRequestDto request)
         {
             var user = await _context.users.FirstOrDefaultAsync(u => u.UserName == request.UserName);
@@ -39,6 +44,11 @@ namespace CrudWithAuth.Services
 
             return await CreateTokenResponse(user);
         }
+
+        //<summary>
+        //logout the user by removing and set null the refresh token and refresh token expiry time
+        // return null if anything goes wrong
+        //</summary>
         public async Task<string?> LogOutAsync(int userId)
         {
             try
@@ -56,6 +66,11 @@ namespace CrudWithAuth.Services
 
             return "success";
         }
+
+        //<summary>
+        // register the user. if information passed in already exist in the database return null
+        // else hash the password and add the user to the database
+        //</summary>
         public async Task<User?> RegisterAsync(UserRequestDto request)
         {
             if (await _context.users.AnyAsync(u => u.UserName == request.UserName))
@@ -77,6 +92,9 @@ namespace CrudWithAuth.Services
             return user;
         }
 
+        //<summary>
+        // pass in the RefreshTokenRequestDro and userId to return new accesstoken and potentially new refreshtoken
+        //</summary>
         public async Task<TokenResponseDto?> RefreshTokensAsync(RefreshTokenRequestDto request, int userId)
         {
             var user = await ValidateRefreshTokenAsync(userId, request.RefreshToken);
@@ -85,6 +103,10 @@ namespace CrudWithAuth.Services
 
             return await CreateTokenResponse(user);
         }
+
+        //<summary>
+        // use the User passed in return new accesstoken and potentially new refreshtoken
+        //</summary>
         private async Task<TokenResponseDto> CreateTokenResponse(User user)
         {
             return new TokenResponseDto
@@ -94,6 +116,9 @@ namespace CrudWithAuth.Services
             };
         }
 
+        //<summary>
+        //user the Id and refresh token passed to make sure the user exist and the refresh token is valid
+        //</summary>
         private async Task<User?> ValidateRefreshTokenAsync(int Id, string refreshToken)
         {
             var user = await _context.users.FirstOrDefaultAsync(u => u.Id == Id);
@@ -105,6 +130,11 @@ namespace CrudWithAuth.Services
             return user;
         }
 
+
+        //<summary>
+        // generate and save refreshtoken if it doesn't exist.
+        // if it exist return an empty string
+        //</summary>
         private async Task<string> GenerateAndSaveRefreshToken(User user)
         {
             var sbRefreshtoken = new StringBuilder("");
@@ -121,6 +151,9 @@ namespace CrudWithAuth.Services
             return sbRefreshtoken.ToString();
         }
 
+        //<summary>
+        // generate refresh token by creating an byte array and fill it with crypographically strong random value 
+        //</summary>
         private string GenerateRefreshToken()
         {
             var randomNumber = new byte[32];
@@ -129,6 +162,12 @@ namespace CrudWithAuth.Services
             return Convert.ToBase64String(randomNumber);
         }
 
+        //<summary>
+        // Create a token by passing in the user and then create a list of Claims
+        // (Name = UserName, NameIdentifier = user.Id, Role = userRole)
+        // set up Jwt function by creating a symmentricSecuritykey that goes into SigningCredentials
+        // that goes into a JwtSecurityToken before finally creating the token
+        //</summary>
         private string CreateToken(User user)
         {
             var Claims = new List<Claim>
