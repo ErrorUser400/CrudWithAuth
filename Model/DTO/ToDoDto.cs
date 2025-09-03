@@ -4,6 +4,12 @@ namespace CrudWithAuth.Model.DTO
 {
     public class ToDoDto
     {
+        public ToDoDto()
+        {
+            this.Id = 0;
+            this.Title = string.Empty;
+            this.IsDone = false;
+        }
         public ToDoDto(ToDo toDo)
         {
             Id = toDo.Id;

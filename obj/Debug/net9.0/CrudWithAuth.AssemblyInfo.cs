@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudWithAuth")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5deccc4bc087d77d459f2e039641b20850e44535")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6548225f7e25b5eff0893f312334eea972bf1c82")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudWithAuth")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudWithAuth")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
