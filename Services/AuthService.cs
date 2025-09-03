@@ -4,6 +4,7 @@ using CrudWithAuth.Model.DTO;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -22,7 +23,7 @@ namespace CrudWithAuth.Services
             _context = context;
         }
 
-        public async Task<TokenResponseDto?> LoginAsync(UserDto request)
+        public async Task<TokenResponseDto?> LoginAsync(UserRequestDto request)
         {
             var user = await _context.users.FirstOrDefaultAsync(u => u.UserName == request.UserName);
 
@@ -38,17 +39,24 @@ namespace CrudWithAuth.Services
 
             return await CreateTokenResponse(user);
         }
-
-        private async Task<TokenResponseDto> CreateTokenResponse(User user)
+        public async Task<string?> LogOutAsync(int userId)
         {
-            return new TokenResponseDto
+            try
             {
-                AccessToken = CreateToken(user),
-                RefreshToken = await GenerateAndSaveRefreshToken(user)
-            };
-        }
+                var dbUser = await _context.users.FindAsync(userId);
+                dbUser.RefreshToken = null;
+                dbUser.RefreshTokenExpiryTime = null;
 
-        public async Task<User?> RegisterAsync(UserDto request)
+                await _context.SaveChangesAsync();
+            }
+            catch (DbException e)
+            {
+                return null;
+            }
+
+            return "success";
+        }
+        public async Task<User?> RegisterAsync(UserRequestDto request)
         {
             if (await _context.users.AnyAsync(u => u.UserName == request.UserName))
             {
@@ -69,13 +77,21 @@ namespace CrudWithAuth.Services
             return user;
         }
 
-        public async Task<TokenResponseDto?> RefreshTokensAsync(RefreshTokenRequestDto request)
+        public async Task<TokenResponseDto?> RefreshTokensAsync(RefreshTokenRequestDto request, int userId)
         {
-            var user = await ValidateRefreshTokenAsync(request.Id, request.RefreshToken);
+            var user = await ValidateRefreshTokenAsync(userId, request.RefreshToken);
 
             if (user is null) { return null; }
 
             return await CreateTokenResponse(user);
+        }
+        private async Task<TokenResponseDto> CreateTokenResponse(User user)
+        {
+            return new TokenResponseDto
+            {
+                AccessToken = CreateToken(user),
+                RefreshToken = await GenerateAndSaveRefreshToken(user)
+            };
         }
 
         private async Task<User?> ValidateRefreshTokenAsync(int Id, string refreshToken)
@@ -91,13 +107,18 @@ namespace CrudWithAuth.Services
 
         private async Task<string> GenerateAndSaveRefreshToken(User user)
         {
-            var refreshtoken = GenerateRefreshToken();
-            user.RefreshToken = refreshtoken;
-            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+            var sbRefreshtoken = new StringBuilder("");
+
+            if (user.RefreshToken is null)
+            {
+                sbRefreshtoken.Append(GenerateRefreshToken());
+                user.RefreshToken = sbRefreshtoken.ToString();
+                user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+            }
 
             await _context.SaveChangesAsync();
 
-            return refreshtoken;
+            return sbRefreshtoken.ToString();
         }
 
         private string GenerateRefreshToken()

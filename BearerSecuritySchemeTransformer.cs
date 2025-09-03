@@ -25,7 +25,7 @@ namespace CrudWithAuth
                         Type = SecuritySchemeType.Http,
                         Scheme = "bearer",
                         In = ParameterLocation.Header,
-                        BearerFormat = "JWT"
+                        BearerFormat = "Json Web Token"
                     }
                 };
 

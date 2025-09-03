@@ -5,9 +5,9 @@ namespace CrudWithAuth.Services
 {
     public interface IAuthService
     {
-        Task<User?> RegisterAsync(UserDto request);
-        Task<TokenResponseDto?> LoginAsync(UserDto request);
-
-        Task<TokenResponseDto?> RefreshTokensAsync(RefreshTokenRequestDto request);
+        Task<User?> RegisterAsync(UserRequestDto request);
+        Task<TokenResponseDto?> LoginAsync(UserRequestDto request);
+        Task<TokenResponseDto?> RefreshTokensAsync(RefreshTokenRequestDto request, int userId);
+        Task<string> LogOutAsync(int userId);
     }
 }
