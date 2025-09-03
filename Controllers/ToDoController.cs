@@ -1,5 +1,4 @@
-﻿using CrudWithAuth.Entitites;
-using CrudWithAuth.Model.DTO;
+﻿using CrudWithAuth.Model.DTO;
 using CrudWithAuth.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +6,6 @@ using System.Security.Claims;
 
 namespace CrudWithAuth.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ToDoController : ControllerBase
@@ -19,8 +17,9 @@ namespace CrudWithAuth.Controllers
             _toDoService = toDoService;
         }
 
+        [Authorize]
         [HttpGet("/todo{Id}")]
-        public async Task<ActionResult<ToDo>> GetToDo(int Id)
+        public async Task<ActionResult<ToDoDto>> GetToDo(int Id)
         {
             var result = await _toDoService.GetToDoAsync(Id);
 
@@ -33,13 +32,14 @@ namespace CrudWithAuth.Controllers
         }
 
         [HttpGet("/todos")]
-        public async Task<ActionResult<List<ToDo>>> GetToDos()
+        public async Task<ActionResult<List<ToDoDto>>> GetToDos()
         {
             return Ok(await _toDoService.GetToDosAsync());
         }
 
+        [Authorize]
         [HttpPost("/create")]
-        public async Task<ActionResult<ToDo>> CreateToDo(ToDoDto request)
+        public async Task<ActionResult<ToDoDto>> CreateToDo(ToDoDto request)
         {
             //var userId = Int32.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
@@ -50,8 +50,9 @@ namespace CrudWithAuth.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpPatch("/update")]
-        public async Task<ActionResult<ToDo>> UpdateTodo(ToDoDto request)
+        public async Task<ActionResult<ToDoDto>> UpdateTodo(ToDoDto request)
         {
             var result = await _toDoService.UpdateToDoAsync(request);
 
@@ -63,6 +64,7 @@ namespace CrudWithAuth.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpDelete("/delete{Id}")]
         public async Task<ActionResult<string>> DeleteToDo(int Id)
         {

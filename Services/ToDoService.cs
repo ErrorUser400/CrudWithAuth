@@ -14,14 +14,14 @@ namespace CrudWithAuth.Services
             _context = context;
         }
 
-        public async Task<ToDo> CreateToDo(ToDoDto NewToDo, int userId)
+        public async Task<ToDoDto> CreateToDo(ToDoDto NewToDo, int userId)
         {
-            var newtodo = new ToDo { Title = NewToDo.Title, CreatedDate = NewToDo.CreatedDate, IsDone = NewToDo.IsDone, UserId = userId };
+            var newtodo = new ToDo { Title = NewToDo.Title, CreatedDate = DateTime.UtcNow, IsDone = NewToDo.IsDone, UserId = userId };
 
             _context.toDos.Add(newtodo);
             await _context.SaveChangesAsync();
 
-            return newtodo;
+            return new ToDoDto(newtodo);
         }
 
         public async Task<bool?> DeleteToDoAsync(int Id)
@@ -39,7 +39,7 @@ namespace CrudWithAuth.Services
             return true;
         }
 
-        public async Task<ToDo?> GetToDoAsync(int Id)
+        public async Task<ToDoDto?> GetToDoAsync(int Id)
         {
             var todo = await _context.toDos.FirstOrDefaultAsync(t => t.Id == Id);
             if (todo is null)
@@ -47,22 +47,22 @@ namespace CrudWithAuth.Services
                 return null;
             }
 
-            return todo;
+            return new ToDoDto(todo);
         }
 
-        public async Task<List<ToDo>> GetToDosAsync()
+        public async Task<List<ToDoDto>> GetToDosAsync()
         {
             var todo = await _context.toDos.ToListAsync();
 
             if (todo is null || todo.Count == 0)
             {
-                return Enumerable.Empty<ToDo>().ToList();
+                return Enumerable.Empty<ToDoDto>().ToList();
             }
 
-            return todo;
+            return [.. todo.Select(t => new ToDoDto(t))];
         }
 
-        public async Task<ToDo?> UpdateToDoAsync(ToDoDto UpdateToDo)
+        public async Task<ToDoDto?> UpdateToDoAsync(ToDoDto UpdateToDo)
         {
             var todo = await _context.toDos.FirstOrDefaultAsync(t => t.Id == UpdateToDo.Id);
 
@@ -76,7 +76,7 @@ namespace CrudWithAuth.Services
 
             await _context.SaveChangesAsync();
 
-            return todo;
+            return new ToDoDto(todo);
         }
     }
 }

@@ -133,7 +133,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CrudWithAuth.Entitites.ToDo",
+        "Type": "CrudWithAuth.Model.DTO.ToDoDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -185,7 +185,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CrudWithAuth.Entitites.ToDo",
+        "Type": "CrudWithAuth.Model.DTO.ToDoDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -205,7 +205,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[CrudWithAuth.Entitites.ToDo, CrudWithAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[CrudWithAuth.Model.DTO.ToDoDto, CrudWithAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -231,7 +231,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "CrudWithAuth.Entitites.ToDo",
+        "Type": "CrudWithAuth.Model.DTO.ToDoDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
