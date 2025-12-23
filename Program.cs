@@ -13,11 +13,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddOpenApi("v1", options =>
 {
     options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
 });
 
+//ef core sqlite
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
